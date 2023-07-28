@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <vector>
 #include <thread>
 #include <random>
@@ -12,7 +12,7 @@ void selection_sort(std::vector<int> vect, std::promise<std::vector<int>> prom);
 
 int main() {
 	setlocale(LC_ALL, "ru");
-	std::cout << "\tÑîðòèðîâêà âûáîðîì\n\n" << std::endl;
+	std::cout << "\tÐ¡Ð¾Ñ€Ñ‚Ð¸Ñ€Ð¾Ð²ÐºÐ° Ð²Ñ‹Ð±Ð¾Ñ€Ð¾Ð¼\n\n" << std::endl;
 
 	const int size = 20;
 	std::vector<int> vect(size);
@@ -20,7 +20,7 @@ int main() {
 	std::uniform_int_distribution<int> dist(0, size);
 	std::generate(std::execution::par, vect.begin(), vect.end(), [&gen, &dist]() {return dist(gen); });
 
-	std::cout << "Âåêòîð äî ñîðòèðîâêè: ";
+	std::cout << "Ð’ÐµÐºÑ‚Ð¾Ñ€ Ð´Ð¾ ÑÐ¾Ñ€Ñ‚Ð¸Ñ€Ð¾Ð²ÐºÐ¸: ";
 	print_vect(vect);
 	std::cout << std::endl << std::endl;
 
@@ -30,7 +30,7 @@ int main() {
 	vect = std::move(ft.get());
 	th.join();
 
-	std::cout << "Âåêòîð ïîñëå ñîðòèðîâêè: ";
+	std::cout << "Ð’ÐµÐºÑ‚Ð¾Ñ€ Ð¿Ð¾ÑÐ»Ðµ ÑÐ¾Ñ€Ñ‚Ð¸Ñ€Ð¾Ð²ÐºÐ¸: ";
 	print_vect(vect);
 	std::cout << std::endl;
 
